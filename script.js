@@ -29,7 +29,7 @@ const city = document.querySelector("#city")
     })
     .then((data) => {
       (temp.innerHTML = Math.round(data.main.temp) + " °C"),
-        (city.innerHTML = data.name),
+        (city.innerHTML = data.name + ", " + data['sys'].country),
         (humidity.innerHTML = `Humidity : ${data.main.humidity} %`),
         (description.innerHTML = data.weather["0"].description),
         weather_icon.src =`https://openweathermap.org/img/wn/${data.weather["0"].icon}@4x.png`
