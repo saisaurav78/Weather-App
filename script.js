@@ -7,6 +7,10 @@ const description = document.querySelector("#description")
 const weather_icon = document.querySelector(".weather-icon")
 const city = document.querySelector("#city")
  function getWeather() {
+  if(input.value==""){
+   alert("Please Enter a Location")
+  }
+  else{
    div.classList.add("animation")
   const apikey = "b6431536d69178272ea710810942733d";
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=${apikey}&units=metric`)
@@ -33,6 +37,7 @@ const city = document.querySelector("#city")
       input.value = ""
     
     })
+  }
 }  
 btn.addEventListener("click", getWeather)
 input.onkeydown = (event) => {
